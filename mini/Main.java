@@ -112,11 +112,11 @@ class AllDetails implements HotelDetails {
 
         try {
             FileWriter f = new FileWriter("User Details");
-            f.write(name + "\n");
-            f.write(address + "\n");
-            f.write(email + "\n");
-            f.write(age + "\n");
-            f.write(ph + "\n");
+            f.write("Name: " + name + "\n");
+            f.write("Address: " + address + "\n");
+            f.write("Email: " + email + "\n");
+            f.write("Age: " + age + "\n");
+            f.write("Phone No.: " + ph + "\n");
 
             System.out.println("Data saved successfully");
 
