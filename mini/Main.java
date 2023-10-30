@@ -4,7 +4,7 @@ import java.lang.System;
 import java.io.*;
 
 interface HotelDetails {
-    public void rooms();
+    public void rooms(int n);
 
     public void staff();
 
@@ -13,20 +13,51 @@ interface HotelDetails {
     public void checkin_out();
 
     public void rules();
+
 }
 
 class AllDetails implements HotelDetails {
-    public void rooms() {
+    public void rooms(int n) {
         System.out.println("\n\n");
         System.out.println("........................................................");
-        System.out.println("Details of rooms are given below :");
-        System.out.println("AC single room = 1500");
-        System.out.println("AC double sharing room = 2000");
-        System.out.println("Non AC single room = 1000");
-        System.out.println("Non AC double sharing rooms = 1200");
-        System.out.println("Many more rooms are available according to your choices...");
-        System.out.println("........................................................");
-        System.out.println("\n\n");
+
+        switch (n) {
+            case 1:
+                System.out.println("AC single room ");
+                System.out.println("Price: 1500/-  \n");
+                System.out.println("Facilities:\n");
+                System.out.println("Breakfast and lunch included\n");
+                System.out.println("Max 2 Guests\nTV\tGeyser");
+
+                break;
+
+            case 2:
+                System.out.println("AC double sharing room ");
+                System.out.println("Price: 2000/-  ");
+                System.out.println("Facilities:\n");
+                System.out.println("Breakfast, Lunch and Dinner included\n");
+                System.out.println("Max 4 Guests\nTV\tGeyser");
+                break;
+
+            case 3:
+                System.out.println("Non AC single-sharing room ");
+                System.out.println("Price: 1000/-  \n");
+                System.out.println("Facilities:\n");
+                System.out.println("\n");
+                System.out.println("Max 2 Guests\nTV\tGeyser");
+                break;
+
+            case 4:
+                System.out.println("Non AC double sharing rooms");
+                System.out.println("Price: 1200/-  \n");
+                System.out.println("Facilities:\n");
+                System.out.println("\n");
+                System.out.println("Max 4 Guests\nTV\tGeyser");
+                break;
+            default:
+                System.out.println("Enter correct choice!!");
+                break;
+        }
 
     }
 
@@ -79,6 +110,7 @@ public class Main {
 
     public static void main(String[] args) {
         int x, age, ph;
+        int input;
         String name, address, email;
         Scanner sc = new Scanner(System.in);
         AllDetails ad = new AllDetails();
@@ -98,7 +130,19 @@ public class Main {
 
             {
                 case 1: {
-                    ad.rooms();
+
+                    System.out.println("\n\n");
+                    System.out.println("........................................................");
+                    System.out.println("Details of rooms are given below :");
+                    System.out.println("1. AC single room ");
+                    System.out.println("2. AC double sharing room ");
+                    System.out.println("3. Non AC single room ");
+                    System.out.println("4. Non AC double sharing rooms ");
+                    System.out.println("........................................................");
+                    System.out.println("\n\n");
+                    System.out.println("Choose");
+                    input = sc.nextInt();
+                    ad.rooms(input);
                 }
                     break;
 
