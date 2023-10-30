@@ -14,10 +14,13 @@ interface HotelDetails {
 
     public void rules();
 
+    public void booking(String book);
+
 }
 
 class AllDetails implements HotelDetails {
     public void rooms(int n) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("\n\n");
         System.out.println("........................................................");
 
@@ -28,6 +31,9 @@ class AllDetails implements HotelDetails {
                 System.out.println("Facilities:\n");
                 System.out.println("Breakfast and lunch included\n");
                 System.out.println("Max 2 Guests\nTV\tGeyser");
+                System.out.println("Do you want to book this room?");
+                String book1 = scanner.nextLine();
+                booking(book1);
 
                 break;
 
@@ -37,6 +43,10 @@ class AllDetails implements HotelDetails {
                 System.out.println("Facilities:\n");
                 System.out.println("Breakfast, Lunch and Dinner included\n");
                 System.out.println("Max 4 Guests\nTV\tGeyser");
+                System.out.println("Do you want to book this room?");
+                String book2 = scanner.nextLine();
+                booking(book2);
+
                 break;
 
             case 3:
@@ -45,6 +55,9 @@ class AllDetails implements HotelDetails {
                 System.out.println("Facilities:\n");
                 System.out.println("\n");
                 System.out.println("Max 2 Guests\nTV\tGeyser");
+                System.out.println("Do you want to book this room?");
+                String book3 = scanner.nextLine();
+                booking(book3);
                 break;
 
             case 4:
@@ -53,10 +66,22 @@ class AllDetails implements HotelDetails {
                 System.out.println("Facilities:\n");
                 System.out.println("\n");
                 System.out.println("Max 4 Guests\nTV\tGeyser");
+                System.out.println("Do you want to book this room?");
+                String book4 = scanner.nextLine();
+                booking(book4);
                 break;
             default:
                 System.out.println("Enter correct choice!!");
                 break;
+        }
+    }
+
+    public void booking(String book) {
+        if (book.equals("yes")) {
+            System.out.println("Congratulations!! Your room has been booked successfully");
+            System.out.println("_______________________________________________");
+            System.out.println("\n");
+
         }
 
     }
@@ -142,6 +167,7 @@ public class Main {
                     System.out.println("\n\n");
                     System.out.println("Choose");
                     input = sc.nextInt();
+
                     ad.rooms(input);
                 }
                     break;
