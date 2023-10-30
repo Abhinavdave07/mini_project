@@ -33,7 +33,7 @@ class AllDetails implements HotelDetails {
                 System.out.println("Facilities:\n");
                 System.out.println("Breakfast and lunch included\n");
                 System.out.println("Max 2 Guests\nTV\tGeyser");
-                System.out.println("Do you want to book this room?");
+                System.out.println("Do you want to book this room?\nYes\tNo");
                 String book1 = scanner.nextLine();
                 booking(book1);
 
@@ -45,7 +45,7 @@ class AllDetails implements HotelDetails {
                 System.out.println("Facilities:\n");
                 System.out.println("Breakfast, Lunch and Dinner included\n");
                 System.out.println("Max 4 Guests\nTV\tGeyser");
-                System.out.println("Do you want to book this room?");
+                System.out.println("Do you want to book this room?\nYes\tNo");
                 String book2 = scanner.nextLine();
                 booking(book2);
 
@@ -57,7 +57,7 @@ class AllDetails implements HotelDetails {
                 System.out.println("Facilities:\n");
                 System.out.println("\n");
                 System.out.println("Max 2 Guests\nTV\tGeyser");
-                System.out.println("Do you want to book this room?");
+                System.out.println("Do you want to book this room?\nYes\tNo");
                 String book3 = scanner.nextLine();
                 booking(book3);
                 break;
@@ -68,7 +68,7 @@ class AllDetails implements HotelDetails {
                 System.out.println("Facilities:\n");
                 System.out.println("\n");
                 System.out.println("Max 4 Guests\nTV\tGeyser");
-                System.out.println("Do you want to book this room?");
+                System.out.println("Do you want to book this room?\nYes\tNo");
                 String book4 = scanner.nextLine();
                 booking(book4);
                 break;
@@ -79,7 +79,7 @@ class AllDetails implements HotelDetails {
     }
 
     public void booking(String book) {
-        if (book.equals("yes")) {
+        if (book.equals("Yes")) {
             details();
             System.out.println("Congratulations!! Your room has been booked successfully");
             System.out.println("_______________________________________________");
@@ -253,11 +253,11 @@ public class Main {
 
                     try {
                         FileWriter f = new FileWriter("User Details");
-                        f.write(name + "\n");
-                        f.write(address + "\n");
-                        f.write(email + "\n");
-                        f.write(age + "\n");
-                        f.write(ph + "\n");
+                        f.write("Name: " + name + "\n");
+                        f.write("Address: " + address + "\n");
+                        f.write("Email: " + email + "\n");
+                        f.write("Age: " + age + "\n");
+                        f.write("Phone No.: " + ph + "\n");
 
                         System.out.println("Data saved successfully");
 
