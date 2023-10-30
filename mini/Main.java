@@ -124,13 +124,13 @@ public class Main {
 
                 case 6: {
                     System.out.println("Enter your name= ");
-                    name = sc.nextLine();
+                    name = sc.next();
 
                     System.out.println("Enter your address= ");
-                    address = sc.nextLine();
+                    address = sc.next();
 
                     System.out.println("Enter your email= ");
-                    email = sc.nextLine();
+                    email = sc.next();
 
                     System.out.println("Enter your age= ");
                     age = sc.nextInt();
