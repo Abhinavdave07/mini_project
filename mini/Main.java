@@ -16,6 +16,8 @@ interface HotelDetails {
 
     public void booking(String book);
 
+    public void details();
+
 }
 
 class AllDetails implements HotelDetails {
@@ -78,12 +80,53 @@ class AllDetails implements HotelDetails {
 
     public void booking(String book) {
         if (book.equals("yes")) {
+            details();
             System.out.println("Congratulations!! Your room has been booked successfully");
             System.out.println("_______________________________________________");
             System.out.println("\n");
 
         }
 
+    }
+
+    public void details() {
+        int age, ph;
+
+        String name, address, email;
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter your name= ");
+        name = scan.next();
+
+        System.out.println("Enter your address= ");
+        address = scan.next();
+
+        System.out.println("Enter your email= ");
+        email = scan.next();
+
+        System.out.println("Enter your age= ");
+        age = scan.nextInt();
+
+        System.out.println("Enter your phone number= ");
+        ph = scan.nextInt();
+
+        try {
+            FileWriter f = new FileWriter("User Details");
+            f.write(name + "\n");
+            f.write(address + "\n");
+            f.write(email + "\n");
+            f.write(age + "\n");
+            f.write(ph + "\n");
+
+            System.out.println("Data saved successfully");
+
+            f.close();
+
+        } catch (FileNotFoundException fnfe) {
+            System.out.println(fnfe);
+        } catch (IOException ioe) {
+            System.out.println(ioe);
+        }
     }
 
     public void staff() {
